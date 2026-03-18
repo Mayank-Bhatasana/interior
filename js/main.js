@@ -1,5 +1,5 @@
 /* =========================================================
-   WoodCraft Interiors — Main JS
+   UrbanNest Interior — Main JS
    ========================================================= */
 
 /* --- Sticky header shadow --- */
@@ -270,7 +270,7 @@ document.addEventListener('click', function (e) {
       const orig = btn.textContent;
       btn.textContent = 'Subscribed!';
       btn.disabled = true;
-      showToast('You\'re subscribed! Welcome to WoodCraft family 🌿', '✉️');
+      showToast('You\'re subscribed! Welcome to UrbanNest Interior family 🌿', '✉️');
       form.reset();
       setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
     });

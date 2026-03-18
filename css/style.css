@@ -1,5 +1,5 @@
 /* =========================================================
-   WoodCraft Interiors — Main Stylesheet
+   UrbanNest Interior — Main Stylesheet
    ========================================================= */
 
 /* --- Google Fonts import (via @import at top) --- */
@@ -206,9 +206,10 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   gap: 10px;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--brown-dark);
+  white-space: nowrap;
 }
 .logo__icon {
   width: 40px;
