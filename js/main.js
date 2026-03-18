@@ -237,9 +237,7 @@ document.addEventListener('click', function (e) {
     obs.observe(el);
   });
 
-  document.addEventListener('animationframe', () => {});
-
-  // Reuse the 'in-view' class
+  // Inject 'in-view' class
   const style = document.createElement('style');
   style.textContent = '.in-view { opacity: 1 !important; transform: none !important; }';
   document.head.appendChild(style);
