@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — WoodCraft Interiors</title>
+  <meta name="description" content="Browse our full collection of premium wooden furniture and home interior products.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .shop-layout { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:start; }
+    .sidebar { background:var(--white); border:1px solid var(--cream-dark); border-radius:var(--radius-md); padding:28px; position:sticky; top:88px; }
+    .sidebar__title { font-family:var(--font-heading); font-size:1rem; font-weight:600; color:var(--brown-dark); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--cream-dark); }
+    .price-range { margin-top:8px; }
+    .price-range input[type=range] { width:100%; accent-color:var(--brown-main); margin:8px 0; }
+    .price-display { display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-mid); }
+    .sidebar__section { margin-bottom:28px; }
+    .check-list { display:flex; flex-direction:column; gap:8px; }
+    .sort-bar { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; gap:16px; flex-wrap:wrap; }
+    .sort-bar select { padding:9px 14px; border:1.5px solid var(--cream-dark); border-radius:var(--radius-sm); font-size:0.85rem; color:var(--text-dark); background:var(--white); outline:none; cursor:pointer; }
+    .result-count { font-size:0.88rem; color:var(--text-mid); }
+    @media(max-width:900px){ .shop-layout{ grid-template-columns:1fr; } .sidebar{ position:static; } }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">
+  🚚 Free shipping on orders over $999 &nbsp;|&nbsp; Use code <a href="#">WOOD20</a> for 20% off
+</div>
+
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <div class="logo__icon">🪵</div>
+        Wood<span>Craft</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="shop.html" class="nav__link">Shop</a>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="blog.html" class="nav__link">Blog</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-btn" title="Cart">🛒<span class="cart-count" style="display:none">0</span></a>
+        <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+      </div>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a>
+  <a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a>
+  <a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a>
+  <a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a>
+  <a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Our Collection</h1>
+    <p class="page-hero__sub">150+ handcrafted wooden pieces for every room</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Shop</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Filter Bar (mobile-friendly) -->
+    <div class="filter-bar" style="margin-bottom:20px;">
+      <button class="filter-chip active" data-filter="all">All Products</button>
+      <button class="filter-chip" data-filter="living">Living Room</button>
+      <button class="filter-chip" data-filter="bedroom">Bedroom</button>
+      <button class="filter-chip" data-filter="dining">Dining</button>
+      <button class="filter-chip" data-filter="office">Office</button>
+      <button class="filter-chip" data-filter="outdoor">Outdoor</button>
+      <button class="filter-chip" data-filter="storage">Storage</button>
+    </div>
+
+    <div class="shop-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <div class="sidebar__title">Price Range</div>
+          <div class="price-range">
+            <input type="range" min="100" max="5000" value="5000" id="price-slider">
+            <div class="price-display">
+              <span>$100</span>
+              <span id="price-val">$5,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar__section">
+          <div class="sidebar__title">Wood Type</div>
+          <div class="check-list">
+            <label class="check-label"><input type="checkbox" checked> Walnut</label>
+            <label class="check-label"><input type="checkbox" checked> Oak</label>
+            <label class="check-label"><input type="checkbox" checked> Teak</label>
+            <label class="check-label"><input type="checkbox"> Mahogany</label>
+            <label class="check-label"><input type="checkbox"> Pine</label>
+            <label class="check-label"><input type="checkbox"> Cherry</label>
+          </div>
+        </div>
+
+        <div class="sidebar__section">
+          <div class="sidebar__title">Finish</div>
+          <div class="check-list">
+            <label class="check-label"><input type="checkbox" checked> Natural</label>
+            <label class="check-label"><input type="checkbox" checked> Matte</label>
+            <label class="check-label"><input type="checkbox"> Glossy</label>
+            <label class="check-label"><input type="checkbox"> Distressed</label>
+          </div>
+        </div>
+
+        <div class="sidebar__section">
+          <div class="sidebar__title">Rating</div>
+          <div class="check-list">
+            <label class="check-label"><input type="checkbox"> <span class="stars">★★★★★</span></label>
+            <label class="check-label"><input type="checkbox"> <span class="stars">★★★★</span>+</label>
+            <label class="check-label"><input type="checkbox"> <span class="stars">★★★</span>+</label>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--full btn--sm">Apply Filters</button>
+        <button class="btn btn--outline btn--full btn--sm" style="margin-top:8px">Clear All</button>
+      </aside>
+
+      <!-- Products -->
+      <div>
+        <div class="sort-bar">
+          <span class="result-count">Showing <strong>12</strong> of 150 products</span>
+          <select aria-label="Sort">
+            <option>Sort: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+            <option>Best Rated</option>
+          </select>
+        </div>
+
+        <div class="products-grid">
+
+          <div class="product-card" data-product data-product-id="p1" data-product-name="Walnut Lounge Chair" data-product-price="1299" data-product-img="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" data-category="living">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" alt="Walnut Lounge Chair" loading="lazy">
+              <span class="product-card__badge badge--best">Bestseller</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Living Room</div>
+              <a href="product.html?id=p1"><h3 class="product-card__name">Walnut Lounge Chair</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(124)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$1,299</span><span class="price-old">$1,599</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p2" data-product-name="Oak Dining Table" data-product-price="2899" data-product-img="https://images.unsplash.com/photo-1615066091501-a784deef6c5a?w=400&q=80" data-category="dining">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1615066091501-a784deef6c5a?w=400&q=80" alt="Oak Dining Table" loading="lazy">
+              <span class="product-card__badge badge--new">New</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Dining Room</div>
+              <a href="product.html?id=p2"><h3 class="product-card__name">Oak Dining Table</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(89)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$2,899</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p3" data-product-name="Teak Bed Frame" data-product-price="1799" data-product-img="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" data-category="bedroom">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" alt="Teak Bed Frame" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Bedroom</div>
+              <a href="product.html?id=p3"><h3 class="product-card__name">Teak Bed Frame</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★☆</span><span class="rating-count">(67)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$1,799</span><span class="price-old">$2,199</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p4" data-product-name="Mahogany Bookshelf" data-product-price="899" data-product-img="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=400&q=80" data-category="living">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=400&q=80" alt="Mahogany Bookshelf" loading="lazy">
+              <span class="product-card__badge badge--sale">-25%</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Living Room</div>
+              <a href="product.html?id=p4"><h3 class="product-card__name">Mahogany Bookshelf</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(203)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$899</span><span class="price-old">$1,199</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p5" data-product-name="Pine Coffee Table" data-product-price="549" data-product-img="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" data-category="living">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Pine Coffee Table" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Living Room</div>
+              <a href="product.html"><h3 class="product-card__name">Pine Coffee Table</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(156)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$549</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p6" data-product-name="Cherry Wood Wardrobe" data-product-price="2199" data-product-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" data-category="bedroom">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Cherry Wood Wardrobe" loading="lazy">
+              <span class="product-card__badge badge--new">New</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Bedroom</div>
+              <a href="product.html"><h3 class="product-card__name">Cherry Wood Wardrobe</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★☆</span><span class="rating-count">(42)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$2,199</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p7" data-product-name="Teak Garden Bench" data-product-price="749" data-product-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" data-category="outdoor">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" alt="Teak Garden Bench" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Outdoor</div>
+              <a href="product.html"><h3 class="product-card__name">Teak Garden Bench</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(78)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$749</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p8" data-product-name="Walnut Writing Desk" data-product-price="1149" data-product-img="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&q=80" data-category="office">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&q=80" alt="Walnut Writing Desk" loading="lazy">
+              <span class="product-card__badge badge--best">Bestseller</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Home Office</div>
+              <a href="product.html"><h3 class="product-card__name">Walnut Writing Desk</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(111)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$1,149</span><span class="price-old">$1,399</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p9" data-product-name="Oak Floating Shelves" data-product-price="349" data-product-img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" data-category="storage">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Oak Floating Shelves" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Storage</div>
+              <a href="product.html"><h3 class="product-card__name">Oak Floating Shelves (Set of 3)</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(189)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$349</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p10" data-product-name="Walnut Dining Chairs" data-product-price="479" data-product-img="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&q=80" data-category="dining">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&q=80" alt="Walnut Dining Chairs" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Dining Room</div>
+              <a href="product.html"><h3 class="product-card__name">Walnut Dining Chairs (Set of 2)</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★☆</span><span class="rating-count">(54)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$479</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p11" data-product-name="Reclaimed Wood Console" data-product-price="1099" data-product-img="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" data-category="living">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Reclaimed Wood Console" loading="lazy">
+              <span class="product-card__badge badge--sale">-15%</span>
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Living Room</div>
+              <a href="product.html"><h3 class="product-card__name">Reclaimed Wood Console Table</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(76)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$1,099</span><span class="price-old">$1,299</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product data-product-id="p12" data-product-name="Nightstand Pair" data-product-price="699" data-product-img="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&q=80" data-category="bedroom">
+            <div class="product-card__img">
+              <img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&q=80" alt="Nightstand Pair" loading="lazy">
+              <button class="product-card__wish">🤍</button>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__cat">Bedroom</div>
+              <a href="product.html"><h3 class="product-card__name">Oak Nightstand Pair</h3></a>
+              <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(93)</span></div>
+              <div class="product-card__footer">
+                <div class="product-card__price"><span class="price-current">$699</span></div>
+                <button class="add-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;justify-content:center;gap:8px;margin-top:48px;flex-wrap:wrap">
+          <button class="btn btn--primary btn--sm">1</button>
+          <button class="btn btn--outline btn--sm">2</button>
+          <button class="btn btn--outline btn--sm">3</button>
+          <button class="btn btn--outline btn--sm">4</button>
+          <span style="display:flex;align-items:center;padding:0 4px;color:var(--text-light)">...</span>
+          <button class="btn btn--outline btn--sm">12</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo footer__logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a>
+        <p class="footer__desc">Premium wooden furniture and interior solutions, crafted with passion and precision since 2010.</p>
+        <div class="footer__social">
+          <a href="#" class="social-btn">📷</a><a href="#" class="social-btn">📘</a>
+          <a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶️</a>
+        </div>
+      </div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links">
+        <a href="shop.html" class="footer__link">Living Room</a><a href="shop.html" class="footer__link">Bedroom</a>
+        <a href="shop.html" class="footer__link">Dining Room</a><a href="shop.html" class="footer__link">Home Office</a>
+      </div></div>
+      <div><h4 class="footer__heading">Company</h4><div class="footer__links">
+        <a href="about.html" class="footer__link">About Us</a><a href="services.html" class="footer__link">Services</a>
+        <a href="gallery.html" class="footer__link">Gallery</a><a href="contact.html" class="footer__link">Contact</a>
+      </div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links">
+        <a href="cart.html" class="footer__link">Cart</a><a href="#" class="footer__link">Shipping</a>
+        <a href="#" class="footer__link">Returns</a><a href="#" class="footer__link">FAQ</a>
+      </div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.82rem;color:rgba(255,255,255,0.5)">
+      <span>© 2025 WoodCraft Interiors. All rights reserved.</span>
+      <span><a href="#" style="color:var(--gold)">Privacy</a> · <a href="#" style="color:var(--gold)">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Price slider
+  const slider = document.getElementById('price-slider');
+  const priceVal = document.getElementById('price-val');
+  if (slider) {
+    slider.addEventListener('input', () => {
+      priceVal.textContent = '$' + Number(slider.value).toLocaleString();
+    });
+  }
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

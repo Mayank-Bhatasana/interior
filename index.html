@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoodCraft Interiors — Premium Wooden Home Interiors</title>
+  <meta name="description" content="Transform your home with handcrafted wooden furniture and interior solutions. Timeless design, premium quality.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    /* Home-specific extras */
+    .newsletter-section { background: linear-gradient(135deg, #6B3F2A, #8B5E3C); }
+    .newsletter-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .newsletter-form { display:flex; gap:0; }
+    .newsletter-form input {
+      flex:1; padding:14px 20px; border:none; border-radius:var(--radius-sm) 0 0 var(--radius-sm);
+      font-size:0.92rem; outline:none;
+    }
+    .newsletter-form .btn { border-radius:0 var(--radius-sm) var(--radius-sm) 0; }
+    .cta-banner {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+    @media(max-width:768px) {
+      .newsletter-inner { grid-template-columns:1fr; gap:28px; }
+      .newsletter-form { flex-direction:column; }
+      .newsletter-form input { border-radius:var(--radius-sm); }
+      .newsletter-form .btn { border-radius:var(--radius-sm); }
+      .cta-banner { grid-template-columns:1fr; text-align:center; padding:36px 24px; }
+    }
+    .wood-strip { height:8px; background:linear-gradient(90deg, #2C1810, #8B5E3C, #D4A853, #8B5E3C, #2C1810); }
+  </style>
+</head>
+<body>
+
+<!-- Notification Bar -->
+<div class="notif-bar">
+  🚚 Free shipping on orders over $999 &nbsp;|&nbsp; Use code <a href="shop.html">WOOD20</a> for 20% off your first order
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="index.html" class="logo">
+        <div class="logo__icon">🪵</div>
+        Wood<span>Craft</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="shop.html" class="nav__link">Shop</a>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="blog.html" class="nav__link">Blog</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="cart-btn" title="Cart">
+          🛒
+          <span class="cart-count" style="display:none">0</span>
+        </a>
+        <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a>
+  <a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a>
+  <a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a>
+  <a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a>
+  <a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__badge">✦ Handcrafted Since 2010</div>
+      <h1 class="hero__title">
+        Bring <em>Nature's Beauty</em><br>Into Your Home
+      </h1>
+      <p class="hero__subtitle">
+        Premium wooden furniture and interior solutions crafted from sustainably sourced timber. 
+        Each piece tells a story of artisanship, warmth, and timeless elegance.
+      </p>
+      <div class="hero__actions">
+        <a href="shop.html" class="btn btn--gold btn--lg">Explore Collection</a>
+        <a href="services.html" class="btn btn--outline-white btn--lg">Our Services</a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <span class="hero__stat-num">2,400+</span>
+          <span class="hero__stat-label">Happy Homes</span>
+        </div>
+        <div>
+          <span class="hero__stat-num">150+</span>
+          <span class="hero__stat-label">Wood Products</span>
+        </div>
+        <div>
+          <span class="hero__stat-num">14yr</span>
+          <span class="hero__stat-label">Crafting Legacy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wood Strip -->
+<div class="wood-strip"></div>
+
+<!-- Features -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">The WoodCraft Difference</h2>
+      <p class="section-sub">From forest to your living room, we ensure quality at every step of the journey.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🌲</div>
+        <h3 class="feature-card__title">Sustainably Sourced</h3>
+        <p class="feature-card__text">Every piece of timber is ethically sourced from certified forests, ensuring we protect the planet for future generations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">✋</div>
+        <h3 class="feature-card__title">Master Craftsmanship</h3>
+        <p class="feature-card__text">Our skilled artisans bring decades of woodworking expertise to every joint, curve, and finish.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🎨</div>
+        <h3 class="feature-card__title">Custom Designs</h3>
+        <p class="feature-card__text">Can't find what you need? We create bespoke pieces tailored to your exact specifications and space.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🛡️</div>
+        <h3 class="feature-card__title">10-Year Warranty</h3>
+        <p class="feature-card__text">We stand behind every product with our comprehensive 10-year craftsmanship warranty and lifetime support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Browse By Room</span>
+      <h2 class="section-title">Shop by Category</h2>
+    </div>
+    <div class="categories-grid">
+      <a href="shop.html?cat=living" class="cat-card" style="padding-top:140%">
+        <img class="cat-card__img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Living Room" loading="lazy">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__label">
+          Living Room
+          <span class="cat-card__count">48 products</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=bedroom" class="cat-card" style="padding-top:140%">
+        <img class="cat-card__img" src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&q=80" alt="Bedroom" loading="lazy">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__label">
+          Bedroom
+          <span class="cat-card__count">36 products</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=dining" class="cat-card" style="padding-top:140%">
+        <img class="cat-card__img" src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&q=80" alt="Dining" loading="lazy">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__label">
+          Dining Room
+          <span class="cat-card__count">29 products</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=office" class="cat-card" style="padding-top:140%">
+        <img class="cat-card__img" src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&q=80" alt="Home Office" loading="lazy">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__label">
+          Home Office
+          <span class="cat-card__count">22 products</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=outdoor" class="cat-card" style="padding-top:140%">
+        <img class="cat-card__img" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" alt="Outdoor" loading="lazy">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__label">
+          Outdoor
+          <span class="cat-card__count">18 products</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="section section--cream">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
+      <div>
+        <span class="section-label">Bestsellers</span>
+        <h2 class="section-title" style="margin-bottom:0">Featured Products</h2>
+      </div>
+      <a href="shop.html" class="btn btn--outline">View All Products →</a>
+    </div>
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card" data-product data-product-id="p1" data-product-name="Walnut Lounge Chair" data-product-price="1299" data-product-img="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" data-category="living">
+        <div class="product-card__img">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80" alt="Walnut Lounge Chair" loading="lazy">
+          <span class="product-card__badge badge--best">Bestseller</span>
+          <button class="product-card__wish" title="Wishlist">🤍</button>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__cat">Living Room</div>
+          <a href="product.html?id=p1"><h3 class="product-card__name">Walnut Lounge Chair</h3></a>
+          <div class="product-card__rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(124)</span>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="price-current">$1,299</span>
+              <span class="price-old">$1,599</span>
+            </div>
+            <button class="add-cart-btn" title="Add to cart">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-product data-product-id="p2" data-product-name="Oak Dining Table" data-product-price="2899" data-product-img="https://images.unsplash.com/photo-1615066091501-a784deef6c5a?w=400&q=80" data-category="dining">
+        <div class="product-card__img">
+          <img src="https://images.unsplash.com/photo-1615066091501-a784deef6c5a?w=400&q=80" alt="Oak Dining Table" loading="lazy">
+          <span class="product-card__badge badge--new">New</span>
+          <button class="product-card__wish" title="Wishlist">🤍</button>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__cat">Dining Room</div>
+          <a href="product.html?id=p2"><h3 class="product-card__name">Oak Dining Table</h3></a>
+          <div class="product-card__rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(89)</span>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="price-current">$2,899</span>
+            </div>
+            <button class="add-cart-btn" title="Add to cart">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-product data-product-id="p3" data-product-name="Teak Bed Frame" data-product-price="1799" data-product-img="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" data-category="bedroom">
+        <div class="product-card__img">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80" alt="Teak Bed Frame" loading="lazy">
+          <button class="product-card__wish" title="Wishlist">🤍</button>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__cat">Bedroom</div>
+          <a href="product.html?id=p3"><h3 class="product-card__name">Teak Bed Frame</h3></a>
+          <div class="product-card__rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-count">(67)</span>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="price-current">$1,799</span>
+              <span class="price-old">$2,199</span>
+            </div>
+            <button class="add-cart-btn" title="Add to cart">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-product data-product-id="p4" data-product-name="Mahogany Bookshelf" data-product-price="899" data-product-img="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=400&q=80" data-category="living">
+        <div class="product-card__img">
+          <img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?w=400&q=80" alt="Mahogany Bookshelf" loading="lazy">
+          <span class="product-card__badge badge--sale">-25%</span>
+          <button class="product-card__wish" title="Wishlist">🤍</button>
+        </div>
+        <div class="product-card__body">
+          <div class="product-card__cat">Living Room</div>
+          <a href="product.html?id=p4"><h3 class="product-card__name">Mahogany Bookshelf</h3></a>
+          <div class="product-card__rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(203)</span>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="price-current">$899</span>
+              <span class="price-old">$1,199</span>
+            </div>
+            <button class="add-cart-btn" title="Add to cart">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <span class="section-label">Limited Time Offer</span>
+        <h2 class="section-title" style="margin-bottom:12px">Get 20% Off Your First Custom Order</h2>
+        <p class="section-sub">Work with our designers to create the perfect piece for your home. Use code <strong>WOOD20</strong> at checkout.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+        <a href="services.html" class="btn btn--primary btn--lg">Start Designing</a>
+        <a href="gallery.html" class="btn btn--outline">See Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Customer Stories</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars" style="margin-bottom:12px">★★★★★</div>
+        <p class="testimonial-card__text">The walnut dining table we ordered is absolutely stunning. The grain pattern is unique and the craftsmanship is flawless. It's become the centerpiece of our home.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">S</div>
+          <div>
+            <div class="testimonial-card__name">Sarah Mitchell</div>
+            <div class="testimonial-card__loc">New York, NY</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars" style="margin-bottom:12px">★★★★★</div>
+        <p class="testimonial-card__text">We had our entire living room redesigned with WoodCraft pieces. The team was professional and the results exceeded all expectations. Worth every penny.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">J</div>
+          <div>
+            <div class="testimonial-card__name">James & Priya Chen</div>
+            <div class="testimonial-card__loc">San Francisco, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars" style="margin-bottom:12px">★★★★★</div>
+        <p class="testimonial-card__text">The custom bookshelf fits perfectly in our oddly-shaped alcove. I appreciated how the designers worked with our specific measurements and style preferences.</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">A</div>
+          <div>
+            <div class="testimonial-card__name">Amanda Forrest</div>
+            <div class="testimonial-card__loc">Austin, TX</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="section newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <span class="section-label" style="color:var(--gold-light)">Stay Inspired</span>
+        <h2 class="section-title" style="color:#fff;margin-bottom:12px">Join the WoodCraft Newsletter</h2>
+        <p style="color:rgba(255,255,255,0.75);line-height:1.7">Get design inspiration, new arrivals, exclusive offers, and woodworking tips delivered to your inbox.</p>
+      </div>
+      <div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn--gold">Subscribe</button>
+        </form>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:10px">No spam, unsubscribe at any time. By subscribing you agree to our Privacy Policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Preview -->
+<section class="section">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
+      <div>
+        <span class="section-label">From Our Journal</span>
+        <h2 class="section-title" style="margin-bottom:0">Design Inspiration</h2>
+      </div>
+      <a href="blog.html" class="btn btn--outline">Read All Articles →</a>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80" alt="Scandinavian Design" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Design Tips</span>
+            <span class="blog-card__date">Mar 10, 2025</span>
+          </div>
+          <h3 class="blog-card__title">Scandinavian Wood Design: Warmth Meets Minimalism</h3>
+          <p class="blog-card__excerpt">Discover how Nordic design principles can transform your space into a serene, functional retreat with natural wood accents.</p>
+          <a href="blog.html" class="blog-card__read">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=500&q=80" alt="Wood Care Tips" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Care Guide</span>
+            <span class="blog-card__date">Feb 22, 2025</span>
+          </div>
+          <h3 class="blog-card__title">How to Care for Your Wooden Furniture: The Ultimate Guide</h3>
+          <p class="blog-card__excerpt">Learn the secrets to maintaining the beauty of your wooden pieces for decades with these expert tips.</p>
+          <a href="blog.html" class="blog-card__read">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80" alt="Wood Types" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">Wood Guide</span>
+            <span class="blog-card__date">Feb 8, 2025</span>
+          </div>
+          <h3 class="blog-card__title">Choosing the Right Wood: Walnut vs. Oak vs. Teak</h3>
+          <p class="blog-card__excerpt">Understand the characteristics of our most popular wood species to make the perfect choice for your furniture.</p>
+          <a href="blog.html" class="blog-card__read">Read Article →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo footer__logo" style="color:#fff">
+          <div class="logo__icon">🪵</div>
+          Wood<span style="color:var(--gold)">Craft</span>
+        </a>
+        <p class="footer__desc">Premium wooden furniture and interior solutions, crafted with passion and precision since 2010. Bringing the warmth of nature into every home.</p>
+        <div class="footer__social">
+          <a href="#" class="social-btn" title="Instagram">📷</a>
+          <a href="#" class="social-btn" title="Facebook">📘</a>
+          <a href="#" class="social-btn" title="Pinterest">📌</a>
+          <a href="#" class="social-btn" title="YouTube">▶️</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__heading">Shop</h4>
+        <div class="footer__links">
+          <a href="shop.html" class="footer__link">Living Room</a>
+          <a href="shop.html" class="footer__link">Bedroom</a>
+          <a href="shop.html" class="footer__link">Dining Room</a>
+          <a href="shop.html" class="footer__link">Home Office</a>
+          <a href="shop.html" class="footer__link">Outdoor</a>
+          <a href="shop.html" class="footer__link">New Arrivals</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__heading">Company</h4>
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="services.html" class="footer__link">Services</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="blog.html" class="footer__link">Blog</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="#" class="footer__link">Careers</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__heading">Support</h4>
+        <div class="footer__links">
+          <a href="cart.html" class="footer__link">Shopping Cart</a>
+          <a href="checkout.html" class="footer__link">Checkout</a>
+          <a href="#" class="footer__link">Shipping Policy</a>
+          <a href="#" class="footer__link">Returns & Exchanges</a>
+          <a href="#" class="footer__link">Warranty</a>
+          <a href="#" class="footer__link">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <span>© 2025 WoodCraft Interiors. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+        <a href="#">Cookie Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

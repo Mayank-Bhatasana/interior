@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — WoodCraft Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .blog-layout { display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; }
+    .sidebar-widget { background:var(--white); border:1px solid var(--cream-dark); border-radius:var(--radius-md); padding:24px; margin-bottom:24px; }
+    .sidebar-widget__title { font-family:var(--font-heading); font-size:1rem; font-weight:600; color:var(--brown-dark); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--cream-dark); }
+    .recent-post { display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--cream-dark); }
+    .recent-post:last-child { border-bottom:none; }
+    .recent-post__img { width:64px; height:48px; border-radius:6px; overflow:hidden; flex-shrink:0; background:var(--cream); }
+    .recent-post__img img { width:100%;height:100%;object-fit:cover; }
+    .recent-post__title { font-size:0.82rem; font-weight:600; color:var(--brown-dark); line-height:1.4; margin-bottom:4px; }
+    .recent-post__date { font-size:0.72rem; color:var(--text-light); }
+    .featured-article { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); margin-bottom:40px; display:grid; grid-template-columns:1fr 1fr; }
+    .featured-article__img { min-height:320px; }
+    .featured-article__img img { width:100%;height:100%;object-fit:cover; }
+    .featured-article__body { padding:40px; display:flex; flex-direction:column; justify-content:center; }
+    @media(max-width:900px){ .blog-layout{grid-template-columns:1fr;} .featured-article{grid-template-columns:1fr;} .featured-article__img{min-height:220px;} }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">🚚 Free shipping on orders over $999 &nbsp;|&nbsp; <a href="shop.html">Shop Now</a></div>
+
+<header class="header">
+  <div class="container"><div class="header__inner">
+    <a href="index.html" class="logo"><div class="logo__icon">🪵</div>Wood<span>Craft</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a><a href="shop.html" class="nav__link">Shop</a>
+      <a href="services.html" class="nav__link">Services</a><a href="gallery.html" class="nav__link">Gallery</a>
+      <a href="blog.html" class="nav__link">Blog</a><a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="cart.html" class="cart-btn">🛒<span class="cart-count" style="display:none">0</span></a>
+      <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a><a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a><a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a><a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a><a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Design Journal</h1>
+    <p class="page-hero__sub">Tips, inspiration, and stories from our workshop</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb__sep">›</span><span>Blog</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Featured Article -->
+    <div class="featured-article">
+      <div class="featured-article__img">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=85" alt="Scandinavian Design">
+      </div>
+      <div class="featured-article__body">
+        <span class="badge" style="margin-bottom:16px">Featured</span>
+        <div class="blog-card__meta" style="margin-bottom:12px">
+          <span class="blog-card__tag">Design Tips</span>
+          <span class="blog-card__date">March 10, 2025</span>
+        </div>
+        <h2 style="font-family:var(--font-heading);font-size:1.8rem;color:var(--brown-dark);margin-bottom:14px;line-height:1.3;">Scandinavian Wood Design: Warmth Meets Minimalism</h2>
+        <p style="color:var(--text-mid);line-height:1.8;margin-bottom:24px;">Discover how Nordic design principles can transform your space into a serene, functional retreat with natural wood accents, clean lines, and cozy textures.</p>
+        <a href="#" class="btn btn--primary">Read Full Article →</a>
+      </div>
+    </div>
+
+    <!-- Blog Layout -->
+    <div class="blog-layout">
+      <!-- Articles -->
+      <div>
+        <div class="blog-grid" style="margin-bottom:48px">
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=500&q=80" alt="Wood Care" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Care Guide</span>
+                <span class="blog-card__date">Feb 22, 2025</span>
+              </div>
+              <h3 class="blog-card__title">How to Care for Your Wooden Furniture: The Ultimate Guide</h3>
+              <p class="blog-card__excerpt">Learn the secrets to maintaining the beauty of your wooden pieces for decades with our expert care tips and product recommendations.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80" alt="Wood Types" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Wood Guide</span>
+                <span class="blog-card__date">Feb 8, 2025</span>
+              </div>
+              <h3 class="blog-card__title">Choosing the Right Wood: Walnut vs. Oak vs. Teak</h3>
+              <p class="blog-card__excerpt">A deep dive into the characteristics of our most popular wood species to help you choose the perfect material for your furniture.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80" alt="Small Space" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Design Tips</span>
+                <span class="blog-card__date">Jan 30, 2025</span>
+              </div>
+              <h3 class="blog-card__title">Maximizing Small Spaces with Smart Wooden Furniture</h3>
+              <p class="blog-card__excerpt">How to choose and arrange furniture to make any room feel larger and more functional without sacrificing style.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500&q=80" alt="Sustainability" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Sustainability</span>
+                <span class="blog-card__date">Jan 15, 2025</span>
+              </div>
+              <h3 class="blog-card__title">Our Commitment to Sustainable Forestry</h3>
+              <p class="blog-card__excerpt">A look inside our supply chain and the steps we take to ensure every piece of wood we use is sourced responsibly.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&q=80" alt="Home Office" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Workspace</span>
+                <span class="blog-card__date">Jan 5, 2025</span>
+              </div>
+              <h3 class="blog-card__title">Designing the Perfect Wooden Home Office</h3>
+              <p class="blog-card__excerpt">Work from home in style with ergonomic wooden desks, shelving solutions, and decor ideas that boost productivity.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card__img">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&q=80" alt="Outdoor Living" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">Outdoor</span>
+                <span class="blog-card__date">Dec 18, 2024</span>
+              </div>
+              <h3 class="blog-card__title">Outdoor Teak Furniture: Why It's the Best Choice</h3>
+              <p class="blog-card__excerpt">Teak's natural oils make it incredibly resistant to weather, pests, and rot. Learn why it's the gold standard for outdoor furniture.</p>
+              <a href="#" class="blog-card__read">Read Article →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;justify-content:center;gap:8px;">
+          <button class="btn btn--primary btn--sm">1</button>
+          <button class="btn btn--outline btn--sm">2</button>
+          <button class="btn btn--outline btn--sm">3</button>
+          <button class="btn btn--outline btn--sm">Next →</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <!-- Search -->
+        <div class="sidebar-widget">
+          <div class="sidebar-widget__title">Search</div>
+          <div style="display:flex;gap:0;">
+            <input type="search" class="form-control" placeholder="Search articles…" style="border-radius:var(--radius-sm) 0 0 var(--radius-sm);">
+            <button class="btn btn--primary btn--sm" style="border-radius:0 var(--radius-sm) var(--radius-sm) 0;">🔍</button>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="sidebar-widget">
+          <div class="sidebar-widget__title">Categories</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="#" style="display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-mid);padding:6px 0;border-bottom:1px solid var(--cream-dark);">Design Tips <span style="color:var(--brown-light)">12</span></a>
+            <a href="#" style="display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-mid);padding:6px 0;border-bottom:1px solid var(--cream-dark);">Wood Guides <span style="color:var(--brown-light)">8</span></a>
+            <a href="#" style="display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-mid);padding:6px 0;border-bottom:1px solid var(--cream-dark);">Care Guides <span style="color:var(--brown-light)">6</span></a>
+            <a href="#" style="display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-mid);padding:6px 0;border-bottom:1px solid var(--cream-dark);">Sustainability <span style="color:var(--brown-light)">5</span></a>
+            <a href="#" style="display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-mid);padding:6px 0;">Workspace <span style="color:var(--brown-light)">4</span></a>
+          </div>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="sidebar-widget">
+          <div class="sidebar-widget__title">Recent Posts</div>
+          <div class="recent-post">
+            <div class="recent-post__img"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&q=70" alt=""></div>
+            <div><div class="recent-post__title">Scandinavian Wood Design Tips</div><div class="recent-post__date">Mar 10, 2025</div></div>
+          </div>
+          <div class="recent-post">
+            <div class="recent-post__img"><img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=100&q=70" alt=""></div>
+            <div><div class="recent-post__title">How to Care for Wood Furniture</div><div class="recent-post__date">Feb 22, 2025</div></div>
+          </div>
+          <div class="recent-post">
+            <div class="recent-post__img"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=100&q=70" alt=""></div>
+            <div><div class="recent-post__title">Walnut vs. Oak vs. Teak</div><div class="recent-post__date">Feb 8, 2025</div></div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="sidebar-widget" style="background:var(--brown-dark);color:#fff;border-color:transparent">
+          <div class="sidebar-widget__title" style="color:#fff;border-color:rgba(255,255,255,0.2)">Newsletter</div>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:16px;line-height:1.6;">Get the latest articles and offers in your inbox.</p>
+          <form class="newsletter-form" style="flex-direction:column;gap:8px">
+            <input type="email" placeholder="Your email" required style="border-radius:var(--radius-sm);padding:11px 14px;font-size:0.88rem;border:none;outline:none;">
+            <button type="submit" class="btn btn--gold btn--full btn--sm">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a><p class="footer__desc">Premium wooden furniture since 2010.</p></div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links"><a href="shop.html" class="footer__link">All Products</a></div></div>
+      <div><h4 class="footer__heading">Company</h4><div class="footer__links"><a href="about.html" class="footer__link">About</a><a href="gallery.html" class="footer__link">Gallery</a></div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links"><a href="cart.html" class="footer__link">Cart</a><a href="#" class="footer__link">FAQ</a></div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;"><div class="container" style="font-size:0.82rem;color:rgba(255,255,255,0.5);">© 2025 WoodCraft Interiors.</div></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

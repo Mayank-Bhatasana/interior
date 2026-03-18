@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — WoodCraft Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .services-hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .service-big-card {
+      background:var(--white); border-radius:var(--radius-lg);
+      overflow:hidden; box-shadow:var(--shadow-md);
+      display:grid; grid-template-columns:1fr 1fr;
+      margin-bottom:28px;
+    }
+    .service-big-card__img { min-height:280px; }
+    .service-big-card__img img { width:100%; height:100%; object-fit:cover; }
+    .service-big-card__body { padding:36px; display:flex; flex-direction:column; justify-content:center; }
+    .service-big-card__num { font-family:var(--font-heading); font-size:3.5rem; font-weight:700; color:var(--cream-dark); line-height:1; margin-bottom:12px; }
+    .pricing-card { background:var(--white); border-radius:var(--radius-md); padding:36px; box-shadow:var(--shadow-sm); border:2px solid var(--cream-dark); transition:all var(--transition); text-align:center; }
+    .pricing-card:hover, .pricing-card.featured { border-color:var(--brown-main); transform:scale(1.03); }
+    .pricing-card.featured { background:var(--brown-dark); color:var(--white); }
+    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+    .pricing-price { font-family:var(--font-heading); font-size:2.8rem; font-weight:700; color:var(--brown-main); }
+    .pricing-card.featured .pricing-price { color:var(--gold); }
+    .pricing-list { list-style:none; text-align:left; margin:20px 0; }
+    .pricing-list li { padding:8px 0; font-size:0.88rem; border-bottom:1px solid var(--cream-dark); display:flex; align-items:center; gap:10px; }
+    .pricing-card.featured .pricing-list li { border-color:rgba(255,255,255,0.15); color:rgba(255,255,255,0.85); }
+    @media(max-width:768px){
+      .service-big-card{ grid-template-columns:1fr; }
+      .service-big-card__img{ min-height:200px; }
+      .services-hero-grid{ grid-template-columns:1fr; gap:36px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">🚚 Free shipping on orders over $999 &nbsp;|&nbsp; <a href="shop.html">Shop Now</a></div>
+
+<header class="header">
+  <div class="container"><div class="header__inner">
+    <a href="index.html" class="logo"><div class="logo__icon">🪵</div>Wood<span>Craft</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a><a href="shop.html" class="nav__link">Shop</a>
+      <a href="services.html" class="nav__link">Services</a><a href="gallery.html" class="nav__link">Gallery</a>
+      <a href="blog.html" class="nav__link">Blog</a><a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="cart.html" class="cart-btn">🛒<span class="cart-count" style="display:none">0</span></a>
+      <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a><a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a><a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a><a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a><a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Our Services</h1>
+    <p class="page-hero__sub">From custom design to white-glove installation</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb__sep">›</span><span>Services</span></div>
+  </div>
+</section>
+
+<!-- Services Intro -->
+<section class="section">
+  <div class="container">
+    <div class="services-hero-grid">
+      <div>
+        <span class="section-label">Full-Service Interior Solutions</span>
+        <h2 class="section-title">More Than Just Furniture</h2>
+        <p style="color:var(--text-mid);line-height:1.8;margin-bottom:16px;">
+          We go beyond selling furniture. Our team of designers, craftspeople, and installers works with you from concept to completion, ensuring every piece fits perfectly in your space.
+        </p>
+        <p style="color:var(--text-mid);line-height:1.8;margin-bottom:28px;">
+          Whether you need a single custom piece or a complete room transformation, we have the expertise and passion to make it happen.
+        </p>
+        <a href="contact.html" class="btn btn--primary">Schedule a Consultation</a>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=85" alt="Interior Design" style="width:100%;height:400px;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Cards -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+
+    <div class="service-big-card">
+      <div class="service-big-card__img">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80" alt="Custom Design">
+      </div>
+      <div class="service-big-card__body">
+        <div class="service-big-card__num">01</div>
+        <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:var(--brown-dark);margin-bottom:12px;">Custom Furniture Design</h3>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:20px;">Work one-on-one with our designers to create pieces built to your exact specifications — size, wood species, finish, and style.</p>
+        <a href="contact.html" class="btn btn--primary btn--sm">Start Custom Order</a>
+      </div>
+    </div>
+
+    <div class="service-big-card" style="direction:ltr">
+      <div class="service-big-card__body">
+        <div class="service-big-card__num">02</div>
+        <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:var(--brown-dark);margin-bottom:12px;">Interior Design Consultation</h3>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:20px;">Our certified interior designers will visit your home and create a comprehensive design plan that incorporates our furniture collections.</p>
+        <a href="contact.html" class="btn btn--primary btn--sm">Book a Consultation</a>
+      </div>
+      <div class="service-big-card__img">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80" alt="Interior Design">
+      </div>
+    </div>
+
+    <div class="service-big-card">
+      <div class="service-big-card__img">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&q=80" alt="Installation">
+      </div>
+      <div class="service-big-card__body">
+        <div class="service-big-card__num">03</div>
+        <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:var(--brown-dark);margin-bottom:12px;">White-Glove Delivery & Installation</h3>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:20px;">Our delivery team handles everything — from careful transportation to professional placement and assembly in your home.</p>
+        <a href="contact.html" class="btn btn--primary btn--sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Additional Services -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Also Available</span>
+      <h2 class="section-title">Additional Services</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🔧</div>
+        <h3 class="feature-card__title">Furniture Restoration</h3>
+        <p class="feature-card__text">Breathe new life into old pieces. Our craftsmen can refinish, repair, and restore heirloom furniture to its former glory.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">📐</div>
+        <h3 class="feature-card__title">Space Planning</h3>
+        <p class="feature-card__text">Our 3D space planning service helps you visualize exactly how furniture will look and fit in your room before ordering.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🎨</div>
+        <h3 class="feature-card__title">Wood Finishing</h3>
+        <p class="feature-card__text">Choose from our range of finishes or bring in your own colour palette. We'll match it perfectly to your existing décor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">♻️</div>
+        <h3 class="feature-card__title">Trade-In Program</h3>
+        <p class="feature-card__text">Trade in your old WoodCraft furniture for credit towards new pieces. We refinish and donate to local charitable organizations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Our Simple Process</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-card__num">1</div>
+        <h3 class="step-card__title">Consultation</h3>
+        <p class="step-card__text">We begin with a free consultation to understand your vision, needs, and budget.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">2</div>
+        <h3 class="step-card__title">Design</h3>
+        <p class="step-card__text">Our designers create detailed drawings and 3D renders for your approval.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">3</div>
+        <h3 class="step-card__title">Crafting</h3>
+        <p class="step-card__text">Master craftspeople build your piece with meticulous attention to detail.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">4</div>
+        <h3 class="step-card__title">Delivery</h3>
+        <p class="step-card__text">White-glove delivery and professional installation in your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Simple Pricing</span>
+      <h2 class="section-title">Consultation Packages</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;margin-bottom:8px;color:var(--brown-dark)">Essential</h3>
+        <div class="pricing-price">$149</div>
+        <div style="font-size:0.78rem;color:var(--text-light);margin-bottom:16px;">One-time fee</div>
+        <ul class="pricing-list">
+          <li>✓ 1-hour in-home consultation</li>
+          <li>✓ Room measurements</li>
+          <li>✓ Product recommendations</li>
+          <li>✓ Style mood board</li>
+          <li style="color:var(--text-light);">✗ 3D rendering</li>
+          <li style="color:var(--text-light);">✗ Installation service</li>
+        </ul>
+        <a href="contact.html" class="btn btn--outline btn--full">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge" style="margin-bottom:16px;">Most Popular</div>
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;margin-bottom:8px;color:#fff">Complete</h3>
+        <div class="pricing-price">$399</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);margin-bottom:16px;">One-time fee</div>
+        <ul class="pricing-list">
+          <li>✓ 3-hour design session</li>
+          <li>✓ Full room 3D rendering</li>
+          <li>✓ Material & finish samples</li>
+          <li>✓ Shopping list & budget plan</li>
+          <li>✓ Installation coordination</li>
+          <li style="color:rgba(255,255,255,0.5);">✗ Follow-up visit</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold btn--full">Get Started</a>
+      </div>
+      <div class="pricing-card">
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;margin-bottom:8px;color:var(--brown-dark)">Premium</h3>
+        <div class="pricing-price">$799</div>
+        <div style="font-size:0.78rem;color:var(--text-light);margin-bottom:16px;">One-time fee</div>
+        <ul class="pricing-list">
+          <li>✓ Full day design session</li>
+          <li>✓ Whole-home design plan</li>
+          <li>✓ Custom furniture design</li>
+          <li>✓ Priority production</li>
+          <li>✓ White-glove installation</li>
+          <li>✓ 3-month follow-up</li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--full">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--cream">
+  <div class="container" style="max-width:800px">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__btn">How long does a custom order take? <span class="accordion__icon">▼</span></button>
+        <div class="accordion__content"><div class="accordion__body">Custom furniture typically takes 6–12 weeks depending on complexity and our current queue. We'll give you a detailed timeline at the consultation stage.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__btn">Can I see wood samples before ordering? <span class="accordion__icon">▼</span></button>
+        <div class="accordion__content"><div class="accordion__body">Absolutely! We send complimentary sample packs of our most popular wood species and finishes. Request yours through our contact page.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__btn">Do you offer financing? <span class="accordion__icon">▼</span></button>
+        <div class="accordion__content"><div class="accordion__body">Yes, we offer 0% financing for 12 months on orders over $1,000 through our lending partner. Apply during checkout.</div></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__btn">What areas do you serve? <span class="accordion__icon">▼</span></button>
+        <div class="accordion__content"><div class="accordion__body">We ship ready-made products across the contiguous United States and Canada. In-home design services are available in the Northeast US and select cities nationwide.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a><p class="footer__desc">Premium wooden furniture since 2010.</p></div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links"><a href="shop.html" class="footer__link">All Products</a></div></div>
+      <div><h4 class="footer__heading">Company</h4><div class="footer__links"><a href="about.html" class="footer__link">About</a><a href="contact.html" class="footer__link">Contact</a></div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links"><a href="cart.html" class="footer__link">Cart</a><a href="#" class="footer__link">FAQ</a></div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;"><div class="container" style="display:flex;justify-content:space-between;font-size:0.82rem;color:rgba(255,255,255,0.5);flex-wrap:wrap;gap:8px;"><span>© 2025 WoodCraft Interiors.</span></div></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
