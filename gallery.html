@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — WoodCraft Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .gallery-filter { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px; }
+    .project-card { background:var(--white); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); transition:all var(--transition); }
+    .project-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+    .project-card__img { padding-top:70%; position:relative; overflow:hidden; }
+    .project-card__img img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s; }
+    .project-card:hover .project-card__img img { transform:scale(1.06); }
+    .project-card__body { padding:20px 24px; }
+    .project-card__location { font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--brown-light);margin-bottom:6px; }
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:28px; }
+    .before-after { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .before-after__img { position:relative; border-radius:var(--radius-sm); overflow:hidden; }
+    .before-after__img img { width:100%; height:240px; object-fit:cover; }
+    .before-after__label { position:absolute;top:12px;left:12px;background:var(--brown-dark);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700; }
+    @media(max-width:600px){ .before-after{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">🚚 Free shipping on orders over $999 &nbsp;|&nbsp; <a href="shop.html">Shop Now</a></div>
+
+<header class="header">
+  <div class="container"><div class="header__inner">
+    <a href="index.html" class="logo"><div class="logo__icon">🪵</div>Wood<span>Craft</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a><a href="shop.html" class="nav__link">Shop</a>
+      <a href="services.html" class="nav__link">Services</a><a href="gallery.html" class="nav__link">Gallery</a>
+      <a href="blog.html" class="nav__link">Blog</a><a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="cart.html" class="cart-btn">🛒<span class="cart-count" style="display:none">0</span></a>
+      <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a><a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a><a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a><a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a><a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Our Portfolio</h1>
+    <p class="page-hero__sub">Real projects, real transformations</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb__sep">›</span><span>Gallery</span></div>
+  </div>
+</section>
+
+<!-- Photo Gallery -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px">
+      <span class="section-label">Photo Gallery</span>
+      <h2 class="section-title">Handcrafted Pieces in Real Homes</h2>
+    </div>
+
+    <div class="gallery-filter">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="living">Living Room</button>
+      <button class="filter-chip" data-filter="bedroom">Bedroom</button>
+      <button class="filter-chip" data-filter="dining">Dining</button>
+      <button class="filter-chip" data-filter="office">Office</button>
+      <button class="filter-chip" data-filter="outdoor">Outdoor</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall" data-category="living">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Living Room Setup" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="bedroom">
+        <img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=600&q=80" alt="Bedroom" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="dining">
+        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80" alt="Dining" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item gallery-item--wide" data-category="living">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80" alt="Living Room" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="office">
+        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="Home Office" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="outdoor">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Outdoor" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="living">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Console" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item gallery-item--tall" data-category="bedroom">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Bed" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="living">
+        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80" alt="Chair" loading="lazy">
+        <div class="gallery-item__overlay">🔍</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Case Studies</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-card__img"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80" alt="Brooklyn Loft" loading="lazy"></div>
+        <div class="project-card__body">
+          <div class="project-card__location">🗽 Brooklyn, New York</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.2rem;color:var(--brown-dark);margin-bottom:8px;">Brooklyn Loft Transformation</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">A complete living and dining room redesign for a converted loft space, featuring custom walnut pieces and warm amber lighting.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Walnut</span>
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Custom</span>
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Living Room</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card__img"><img src="https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=500&q=80" alt="California Retreat" loading="lazy"></div>
+        <div class="project-card__body">
+          <div class="project-card__location">☀️ Malibu, California</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.2rem;color:var(--brown-dark);margin-bottom:8px;">Malibu Coastal Retreat</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">Beach house bedroom suite featuring teak furniture with weathered finish, evoking coastal living at its finest.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Teak</span>
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Bedroom</span>
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Coastal</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card__img"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80" alt="Austin Farmhouse" loading="lazy"></div>
+        <div class="project-card__body">
+          <div class="project-card__location">🤠 Austin, Texas</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.2rem;color:var(--brown-dark);margin-bottom:8px;">Modern Texas Farmhouse</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">A rustic-modern kitchen and dining room featuring reclaimed oak with black iron hardware, blending old and new beautifully.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Reclaimed Oak</span>
+            <span class="badge" style="background:var(--cream);color:var(--brown-main)">Dining</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before & After -->
+<section class="section">
+  <div class="container" style="max-width:900px">
+    <div class="text-center" style="margin-bottom:48px">
+      <span class="section-label">Transformations</span>
+      <h2 class="section-title">Before & After</h2>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <h3 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--brown-dark);margin-bottom:16px;">Living Room — Manhattan Apartment</h3>
+      <div class="before-after">
+        <div class="before-after__img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Before">
+          <span class="before-after__label">Before</span>
+        </div>
+        <div class="before-after__img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80" alt="After">
+          <span class="before-after__label" style="background:var(--brown-main)">After</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--brown-dark);margin-bottom:16px;">Bedroom — Portland Home</h3>
+      <div class="before-after">
+        <div class="before-after__img">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500&q=75" alt="Before">
+          <span class="before-after__label">Before</span>
+        </div>
+        <div class="before-after__img">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&q=80" alt="After">
+          <span class="before-after__label" style="background:var(--brown-main)">After</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <span class="section-label">Start Your Project</span>
+    <h2 class="section-title" style="color:#fff;margin-bottom:16px;">Ready to Transform Your Space?</h2>
+    <p class="section-sub" style="margin-bottom:36px">Let our designers help you create the home of your dreams. Schedule a free consultation today.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn--gold btn--lg">Book Free Consultation</a>
+      <a href="shop.html" class="btn btn--outline-white btn--lg">Shop Products</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a><p class="footer__desc">Premium wooden furniture since 2010.</p></div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links"><a href="shop.html" class="footer__link">All Products</a></div></div>
+      <div><h4 class="footer__heading">Company</h4><div class="footer__links"><a href="about.html" class="footer__link">About</a><a href="contact.html" class="footer__link">Contact</a></div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links"><a href="cart.html" class="footer__link">Cart</a></div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;"><div class="container" style="font-size:0.82rem;color:rgba(255,255,255,0.5);">© 2025 WoodCraft Interiors.</div></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — WoodCraft Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .contact-layout { display:grid; grid-template-columns:1fr 1.4fr; gap:56px; align-items:start; }
+    .hours-table { width:100%; font-size:0.88rem; }
+    .hours-table tr td { padding:10px 0; border-bottom:1px solid var(--cream-dark); color:var(--text-mid); }
+    .hours-table tr td:last-child { text-align:right; font-weight:500; color:var(--brown-dark); }
+    .hours-table tr:last-child td { border-bottom:none; }
+    @media(max-width:900px){ .contact-layout{grid-template-columns:1fr;gap:40px;} }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">🚚 Free shipping on orders over $999 &nbsp;|&nbsp; <a href="shop.html">Shop Now</a></div>
+
+<header class="header">
+  <div class="container"><div class="header__inner">
+    <a href="index.html" class="logo"><div class="logo__icon">🪵</div>Wood<span>Craft</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a><a href="shop.html" class="nav__link">Shop</a>
+      <a href="services.html" class="nav__link">Services</a><a href="gallery.html" class="nav__link">Gallery</a>
+      <a href="blog.html" class="nav__link">Blog</a><a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="cart.html" class="cart-btn">🛒<span class="cart-count" style="display:none">0</span></a>
+      <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a><a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="services.html" class="mobile-nav__link">Services</a><a href="gallery.html" class="mobile-nav__link">Gallery</a>
+  <a href="blog.html" class="mobile-nav__link">Blog</a><a href="about.html" class="mobile-nav__link">About</a>
+  <a href="contact.html" class="mobile-nav__link">Contact</a><a href="cart.html" class="mobile-nav__link">🛒 Cart</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Get in Touch</h1>
+    <p class="page-hero__sub">We'd love to hear from you</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb__sep">›</span><span>Contact</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: Info -->
+      <div>
+        <span class="section-label">Reach Us</span>
+        <h2 class="section-title" style="margin-bottom:8px">Let's Start a Conversation</h2>
+        <p style="color:var(--text-mid);line-height:1.8;margin-bottom:32px;">Whether you have a question about our products, want to book a design consultation, or just want to say hello — we're here for you.</p>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">📍</div>
+          <div>
+            <div class="contact-card__label">Showroom & Workshop</div>
+            <div class="contact-card__val">123 Timber Lane, Burlington, VT 05401</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">📞</div>
+          <div>
+            <div class="contact-card__label">Phone</div>
+            <div class="contact-card__val">+1 (802) 555-0142</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">✉️</div>
+          <div>
+            <div class="contact-card__label">Email</div>
+            <div class="contact-card__val">hello@woodcraftinteriors.com</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon">💬</div>
+          <div>
+            <div class="contact-card__label">Live Chat</div>
+            <div class="contact-card__val">Available Mon–Fri, 9am–6pm EST</div>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div style="background:var(--cream);border-radius:var(--radius-md);padding:24px;margin-top:8px">
+          <h4 style="font-family:var(--font-heading);font-size:1rem;color:var(--brown-dark);margin-bottom:16px;">Showroom Hours</h4>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Saturday</td><td>10:00 AM – 6:00 PM</td></tr>
+            <tr><td>Sunday</td><td>11:00 AM – 4:00 PM</td></tr>
+            <tr><td>Public Holidays</td><td>Closed</td></tr>
+          </table>
+        </div>
+
+        <!-- Social -->
+        <div style="margin-top:24px">
+          <h4 style="font-family:var(--font-heading);font-size:0.95rem;color:var(--brown-dark);margin-bottom:14px;">Follow Us</h4>
+          <div style="display:flex;gap:10px">
+            <a href="#" class="social-btn" style="background:var(--cream);color:var(--brown-main)">📷</a>
+            <a href="#" class="social-btn" style="background:var(--cream);color:var(--brown-main)">📘</a>
+            <a href="#" class="social-btn" style="background:var(--cream);color:var(--brown-main)">📌</a>
+            <a href="#" class="social-btn" style="background:var(--cream);color:var(--brown-main)">▶️</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div>
+        <div style="background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-sm);">
+          <h3 style="font-family:var(--font-heading);font-size:1.4rem;color:var(--brown-dark);margin-bottom:8px">Send Us a Message</h3>
+          <p style="font-size:0.88rem;color:var(--text-light);margin-bottom:28px">We typically respond within 24 hours on business days.</p>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-control" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-control" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject *</label>
+              <select class="form-control" required>
+                <option value="">Select a topic…</option>
+                <option>Product Enquiry</option>
+                <option>Custom Order</option>
+                <option>Design Consultation</option>
+                <option>Delivery & Installation</option>
+                <option>Returns & Warranty</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-control" rows="5" placeholder="Tell us how we can help…" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="check-label">
+                <input type="checkbox" required>
+                I agree to the <a href="#" style="color:var(--brown-main)">Privacy Policy</a> and consent to being contacted regarding my enquiry.
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn--lg">Send Message ✉️</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="section--sm section--cream">
+  <div class="container">
+    <div class="map-placeholder">
+      <span>🗺️</span>
+      <p>123 Timber Lane, Burlington, VT — Map Coming Soon</p>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🚚</div>
+        <h3 class="feature-card__title">Free Shipping</h3>
+        <p class="feature-card__text">Complimentary white-glove delivery on all orders over $999 within the contiguous US.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🔄</div>
+        <h3 class="feature-card__title">Easy Returns</h3>
+        <p class="feature-card__text">30-day hassle-free returns on all standard items. We make the process painless.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🛡️</div>
+        <h3 class="feature-card__title">10-Year Warranty</h3>
+        <p class="feature-card__text">Every piece comes with our comprehensive 10-year craftsmanship warranty.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">📞</div>
+        <h3 class="feature-card__title">Expert Support</h3>
+        <p class="feature-card__text">Our knowledgeable team is available 7 days a week to assist with any questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a><p class="footer__desc">Premium wooden furniture since 2010.</p><div class="footer__social"><a href="#" class="social-btn">📷</a><a href="#" class="social-btn">📘</a></div></div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links"><a href="shop.html" class="footer__link">All Products</a><a href="shop.html" class="footer__link">New Arrivals</a></div></div>
+      <div><h4 class="footer__heading">Company</h4><div class="footer__links"><a href="about.html" class="footer__link">About</a><a href="services.html" class="footer__link">Services</a><a href="gallery.html" class="footer__link">Gallery</a></div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links"><a href="cart.html" class="footer__link">Cart</a><a href="#" class="footer__link">Shipping</a><a href="#" class="footer__link">FAQ</a></div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;"><div class="container" style="font-size:0.82rem;color:rgba(255,255,255,0.5);">© 2025 WoodCraft Interiors.</div></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

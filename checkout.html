@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — WoodCraft Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    .checkout-layout { display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; }
+    .checkout-step { margin-bottom:36px; }
+    .checkout-step__header { display:flex; align-items:center; gap:12px; margin-bottom:20px; padding-bottom:14px; border-bottom:2px solid var(--cream-dark); }
+    .checkout-step__num { width:32px; height:32px; border-radius:50%; background:var(--brown-dark); color:#fff; font-weight:700; font-size:0.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .checkout-step__title { font-family:var(--font-heading); font-size:1.15rem; font-weight:600; color:var(--brown-dark); }
+    .payment-method { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px; }
+    .pay-btn { padding:12px 20px; border:2px solid var(--cream-dark); border-radius:var(--radius-sm); background:var(--white); font-size:0.88rem; cursor:pointer; transition:all var(--transition); }
+    .pay-btn.active { border-color:var(--brown-main); background:var(--cream); }
+    .card-fields { display:grid; gap:16px; }
+    .card-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .secure-badge { display:flex; align-items:center; gap:8px; font-size:0.78rem; color:var(--text-light); justify-content:center; margin-top:12px; }
+    .checkout-success { display:none; text-align:center; padding:60px 20px; }
+    @media(max-width:900px){ .checkout-layout{grid-template-columns:1fr;} }
+    @media(max-width:500px){ .card-row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<div class="notif-bar">🔒 Secure, encrypted checkout &nbsp;|&nbsp; <a href="shop.html">Continue Shopping</a></div>
+
+<header class="header">
+  <div class="container"><div class="header__inner">
+    <a href="index.html" class="logo"><div class="logo__icon">🪵</div>Wood<span>Craft</span></a>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a><a href="shop.html" class="nav__link">Shop</a>
+      <a href="services.html" class="nav__link">Services</a><a href="gallery.html" class="nav__link">Gallery</a>
+      <a href="blog.html" class="nav__link">Blog</a><a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="cart.html" class="cart-btn">🛒<span class="cart-count" style="display:none">0</span></a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">Home</a><a href="shop.html" class="mobile-nav__link">Shop</a>
+  <a href="cart.html" class="mobile-nav__link">🛒 Cart</a><a href="contact.html" class="mobile-nav__link">Contact</a>
+</nav>
+
+<section class="page-hero" style="padding:60px 0 40px">
+  <div class="container page-hero__content">
+    <h1 class="page-hero__title">Checkout</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb__sep">›</span>
+      <a href="cart.html">Cart</a><span class="breadcrumb__sep">›</span>
+      <span>Checkout</span>
+    </div>
+  </div>
+</section>
+
+<!-- Order success (shown after submit) -->
+<div id="checkout-success" class="checkout-success">
+  <div style="font-size:5rem;margin-bottom:20px">✅</div>
+  <h2 style="font-family:var(--font-heading);font-size:2rem;color:var(--brown-dark);margin-bottom:12px">Order Confirmed!</h2>
+  <p style="color:var(--text-mid);max-width:480px;margin:0 auto 32px;line-height:1.8">Thank you for your order! We've sent a confirmation to your email. Your handcrafted furniture will be delivered within 7–10 business days with our white-glove service.</p>
+  <div style="background:var(--cream);border-radius:var(--radius-md);padding:24px;max-width:360px;margin:0 auto 32px">
+    <div style="font-size:0.88rem;color:var(--text-mid)">Order Number</div>
+    <div id="order-num" style="font-family:var(--font-heading);font-size:1.5rem;color:var(--brown-dark);font-weight:700">WC-00000</div>
+  </div>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="shop.html" class="btn btn--primary btn--lg">Continue Shopping</a>
+    <a href="index.html" class="btn btn--outline btn--lg">Back to Home</a>
+  </div>
+</div>
+
+<section id="checkout-section" class="section">
+  <div class="container">
+    <div class="checkout-layout">
+      <!-- Left: Form -->
+      <div>
+
+        <!-- Step 1: Contact -->
+        <div class="checkout-step">
+          <div class="checkout-step__header">
+            <div class="checkout-step__num">1</div>
+            <div class="checkout-step__title">Contact Information</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-control" placeholder="John" required id="fname">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-control" placeholder="Smith" required id="lname">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Shipping -->
+        <div class="checkout-step">
+          <div class="checkout-step__header">
+            <div class="checkout-step__num">2</div>
+            <div class="checkout-step__title">Shipping Address</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address Line 1 *</label>
+            <input type="text" class="form-control" placeholder="123 Main Street" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address Line 2</label>
+            <input type="text" class="form-control" placeholder="Apt, Suite, Floor…">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">City *</label>
+              <input type="text" class="form-control" placeholder="New York" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">State *</label>
+              <select class="form-control" required>
+                <option value="">Select state…</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                <option>California</option><option>Colorado</option><option>Connecticut</option>
+                <option>Florida</option><option>Georgia</option><option>Hawaii</option>
+                <option>Illinois</option><option>Massachusetts</option><option>Michigan</option>
+                <option>New York</option><option>North Carolina</option><option>Ohio</option>
+                <option>Pennsylvania</option><option>Texas</option><option>Vermont</option>
+                <option>Virginia</option><option>Washington</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ZIP Code *</label>
+              <input type="text" class="form-control" placeholder="10001" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Instructions</label>
+            <textarea class="form-control" rows="2" placeholder="Leave at door, call on arrival…"></textarea>
+          </div>
+
+          <!-- Shipping method -->
+          <div class="form-group" style="margin-top:20px">
+            <label class="form-label">Shipping Method</label>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+              <label class="check-label" style="padding:14px;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);cursor:pointer">
+                <input type="radio" name="shipping" value="standard" checked>
+                <div style="flex:1">
+                  <span style="font-weight:600;color:var(--brown-dark)">Standard White-Glove Delivery</span>
+                  <span style="display:block;font-size:0.78rem;color:var(--text-light)">7–10 business days</span>
+                </div>
+                <span style="font-weight:600;color:var(--brown-main)">FREE</span>
+              </label>
+              <label class="check-label" style="padding:14px;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);cursor:pointer">
+                <input type="radio" name="shipping" value="rush">
+                <div style="flex:1">
+                  <span style="font-weight:600;color:var(--brown-dark)">Rush White-Glove Delivery</span>
+                  <span style="display:block;font-size:0.78rem;color:var(--text-light)">3–5 business days</span>
+                </div>
+                <span style="font-weight:600;color:var(--brown-main)">$149</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="checkout-step">
+          <div class="checkout-step__header">
+            <div class="checkout-step__num">3</div>
+            <div class="checkout-step__title">Payment</div>
+          </div>
+          <div class="payment-method">
+            <button class="pay-btn active" onclick="setPayMethod(this,'card')">💳 Credit / Debit Card</button>
+            <button class="pay-btn" onclick="setPayMethod(this,'paypal')">🅿️ PayPal</button>
+            <button class="pay-btn" onclick="setPayMethod(this,'affirm')">📦 Pay Later</button>
+          </div>
+
+          <div id="card-fields" class="card-fields">
+            <div class="form-group">
+              <label class="form-label">Name on Card *</label>
+              <input type="text" class="form-control" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Card Number *</label>
+              <input type="text" class="form-control" placeholder="•••• •••• •••• ••••" maxlength="19" id="card-num" required>
+            </div>
+            <div class="card-row">
+              <div class="form-group">
+                <label class="form-label">Expiry Date *</label>
+                <input type="text" class="form-control" placeholder="MM / YY" maxlength="7" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">CVV *</label>
+                <input type="text" class="form-control" placeholder="•••" maxlength="4" required>
+              </div>
+            </div>
+          </div>
+
+          <div id="paypal-fields" style="display:none;padding:24px;background:var(--cream);border-radius:var(--radius-sm);text-align:center;color:var(--text-mid);">
+            You'll be redirected to PayPal to complete your payment securely.
+          </div>
+          <div id="affirm-fields" style="display:none;padding:24px;background:var(--cream);border-radius:var(--radius-sm);text-align:center;color:var(--text-mid);">
+            Pay later with 0% APR for 12 months on qualifying orders. You'll be directed to our financing partner.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Summary -->
+      <div>
+        <div class="order-summary" style="position:sticky;top:88px">
+          <div class="order-summary__title">Order Summary</div>
+          <div id="checkout-items-list" style="margin-bottom:16px;min-height:60px;"></div>
+          <div class="summary-row"><span>Subtotal</span><span id="co-subtotal">—</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="co-shipping">FREE</span></div>
+          <div class="summary-row"><span>Tax (8%)</span><span id="co-tax">—</span></div>
+          <div class="summary-row summary-row--total"><span>Total</span><span id="co-total">—</span></div>
+
+          <button class="btn btn--primary btn--full btn--lg" style="margin-top:24px" onclick="placeOrder(event)">
+            Place Order 🔒
+          </button>
+          <div class="secure-badge">🔒 SSL Encrypted &nbsp;|&nbsp; 🛡️ Buyer Protection</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="logo" style="color:#fff"><div class="logo__icon">🪵</div>Wood<span style="color:var(--gold)">Craft</span></a><p class="footer__desc">Premium wooden furniture since 2010.</p></div>
+      <div><h4 class="footer__heading">Shop</h4><div class="footer__links"><a href="shop.html" class="footer__link">All Products</a></div></div>
+      <div><h4 class="footer__heading">Support</h4><div class="footer__links"><a href="cart.html" class="footer__link">Cart</a><a href="contact.html" class="footer__link">Contact</a></div></div>
+      <div><h4 class="footer__heading">Legal</h4><div class="footer__links"><a href="#" class="footer__link">Privacy</a><a href="#" class="footer__link">Terms</a></div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;"><div class="container" style="font-size:0.82rem;color:rgba(255,255,255,0.5);">© 2025 WoodCraft Interiors.</div></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function setPayMethod(btn, method) {
+  document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('card-fields').style.display = method === 'card' ? 'grid' : 'none';
+  document.getElementById('paypal-fields').style.display = method === 'paypal' ? 'block' : 'none';
+  document.getElementById('affirm-fields').style.display = method === 'affirm' ? 'block' : 'none';
+}
+
+// Card number formatting
+const cardInput = document.getElementById('card-num');
+if (cardInput) {
+  cardInput.addEventListener('input', function () {
+    let val = this.value.replace(/\D/g, '').substring(0, 16);
+    this.value = val.replace(/(.{4})/g, '$1 ').trim();
+  });
+}
+
+// Populate order summary
+function populateSummary() {
+  const cart = JSON.parse(localStorage.getItem('wc_cart') || '[]');
+  const list = document.getElementById('checkout-items-list');
+  if (list) {
+    if (cart.length === 0) {
+      list.innerHTML = '<p style="font-size:0.85rem;color:var(--text-light)">No items in cart. <a href="shop.html">Shop now</a></p>';
+    } else {
+      list.innerHTML = cart.map(i => `
+        <div style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--cream-dark);align-items:center">
+          <div style="width:50px;height:38px;border-radius:4px;overflow:hidden;background:var(--cream);flex-shrink:0">
+            ${i.image ? `<img src="${i.image}" style="width:100%;height:100%;object-fit:cover">` : '🪑'}
+          </div>
+          <div style="flex:1;font-size:0.82rem;color:var(--brown-dark);font-weight:500">${i.name} <span style="color:var(--text-light);font-weight:400">×${i.qty||1}</span></div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--brown-main)">$${((i.price||0)*(i.qty||1)).toLocaleString()}</div>
+        </div>
+      `).join('');
+    }
+  }
+  const subtotal = cart.reduce((s,i) => s+(i.price||0)*(i.qty||1), 0);
+  const shipping = subtotal > 999 ? 0 : 49;
+  const tax = Math.round(subtotal * 0.08);
+  const total = subtotal + shipping + tax;
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('co-subtotal', '$' + subtotal.toLocaleString());
+  set('co-shipping', shipping === 0 ? 'FREE' : '$' + shipping);
+  set('co-tax', '$' + tax.toLocaleString());
+  set('co-total', '$' + total.toLocaleString());
+}
+
+function placeOrder(e) {
+  e.preventDefault();
+  const btn = e.currentTarget;
+  btn.textContent = 'Processing…';
+  btn.disabled = true;
+  setTimeout(() => {
+    // Clear cart
+    localStorage.removeItem('wc_cart');
+    // Generate order number
+    const orderNum = 'WC-' + Date.now().toString().slice(-6);
+    document.getElementById('order-num').textContent = orderNum;
+    // Show success
+    document.getElementById('checkout-section').style.display = 'none';
+    document.getElementById('checkout-success').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+    window.updateCartCount?.();
+  }, 2000);
+}
+
+document.addEventListener('DOMContentLoaded', populateSummary);
+</script>
+</body>
+</html>
