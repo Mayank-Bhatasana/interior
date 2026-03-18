@@ -1,5 +1,5 @@
 /* =========================================================
-   WoodCraft Interiors — Cart Page JS
+   UrbanNest Interior — Cart Page JS
    ========================================================= */
 
 function getCart() {
